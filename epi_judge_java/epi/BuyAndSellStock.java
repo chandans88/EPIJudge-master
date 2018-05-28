@@ -10,6 +10,7 @@ public class BuyAndSellStock {
   public static double computeMaxProfit(List<Double> prices) {
 
   	//Check for overflow Int vs Double
+	  //IDE open commit test
 
 	Double minPrice = Double.MAX_VALUE;
 	Double maxProfit = 0.0;
