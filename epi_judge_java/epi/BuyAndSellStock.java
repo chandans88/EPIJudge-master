@@ -8,7 +8,9 @@ import java.util.List;
 public class BuyAndSellStock {
   @EpiTest(testfile = "buy_and_sell_stock.tsv")
   public static double computeMaxProfit(List<Double> prices) {
-  
+
+  	//Check for overflow Int vs Double
+
 	Double minPrice = Double.MAX_VALUE;
 	Double maxProfit = 0.0;
 	for(Double p : prices){
