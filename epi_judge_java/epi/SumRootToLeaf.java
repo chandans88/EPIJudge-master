@@ -7,8 +7,25 @@ public class SumRootToLeaf {
   @EpiTest(testfile = "sum_root_to_leaf.tsv")
 
   public static int sumRootToLeaf(BinaryTreeNode<Integer> tree) {
-    // Implement this placeholder.
-    return 0;
+
+    return sumRootToLeafHelper(tree,0);
+
+  }
+  public static int sumRootToLeafHelper(BinaryTreeNode<Integer> tree, int partialPathSum){
+
+    if(tree == null)
+      return 0;
+
+    partialPathSum = partialPathSum * 2 + tree.data;
+
+    // leaf node
+    if(tree.left == null && tree.right == null)
+      return partialPathSum;
+
+    //non-leaf node
+    return sumRootToLeafHelper(tree.left,partialPathSum) +
+            sumRootToLeafHelper(tree.right, partialPathSum);
+
   }
 
   public static void main(String[] args) {

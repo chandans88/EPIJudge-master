@@ -1,5 +1,10 @@
 def buy_and_sell_stock_once(prices):
     # Implement this placeholder.
+
+    minPrice, maxProfit;
+
+    for(p in prices)
+
     return 0.0
 
 

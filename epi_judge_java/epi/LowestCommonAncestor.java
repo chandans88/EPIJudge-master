@@ -11,8 +11,22 @@ public class LowestCommonAncestor {
   public static BinaryTreeNode<Integer> LCA(BinaryTreeNode<Integer> tree,
                                             BinaryTreeNode<Integer> node0,
                                             BinaryTreeNode<Integer> node1) {
-    // Implement this placeholder.
-    return null;
+
+    if(tree == null)
+      return null;
+
+    if(tree == node0 || tree == node1)
+      return tree;
+
+    BinaryTreeNode<Integer> left = LCA(tree.left,node0,node1);
+    BinaryTreeNode<Integer> right = LCA(tree.left,node0,node1);
+
+    if(left == null && right == null)
+      return null;
+    if(left != null && right != null)
+      return tree;
+    return left == null ? right : left;
+
   }
 
   @EpiTest(testfile = "lowest_common_ancestor.tsv")
