@@ -22,8 +22,10 @@ public class KthNodeInTree {
 
   public static BinaryTreeNode<Integer>
   findKthNodeBinaryTree(BinaryTreeNode<Integer> tree, int k) {
-    // Implement this placeholder.
-    return null;
+    
+	
+	
+	return null;
   }
 
   public static BinaryTreeNode<Integer>
