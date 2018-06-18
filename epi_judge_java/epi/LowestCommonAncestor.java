@@ -19,7 +19,7 @@ public class LowestCommonAncestor {
       return tree;
 
     BinaryTreeNode<Integer> left = LCA(tree.left,node0,node1);
-    BinaryTreeNode<Integer> right = LCA(tree.left,node0,node1);
+    BinaryTreeNode<Integer> right = LCA(tree.right,node0,node1);
 
     if(left == null && right == null)
       return null;

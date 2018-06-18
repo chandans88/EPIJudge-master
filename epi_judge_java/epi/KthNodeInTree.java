@@ -22,8 +22,21 @@ public class KthNodeInTree {
 
   public static BinaryTreeNode<Integer>
   findKthNodeBinaryTree(BinaryTreeNode<Integer> tree, int k) {
-    
 	
+	BinaryTreeNode<Integer> curr = tree;
+	while(curr != null){
+
+		int leftSize = curr.left == null ? 0 : curr.left.size;
+			
+		if(k > leftSize + 1){
+			k -= (leftSize + 1);
+			curr = curr.right;
+		}
+		else if(leftSize + 1 == k)
+			return curr;
+		else
+			curr = curr.left;
+	}    
 	
 	return null;
   }
