@@ -11,7 +11,6 @@ public class TwoSum {
   public static boolean hasTwoSum(List<Integer> A, int t) {
   
     return false;
-    }
   
   }
 
