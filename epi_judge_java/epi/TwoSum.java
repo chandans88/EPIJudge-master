@@ -10,14 +10,7 @@ public class TwoSum {
 
   public static boolean hasTwoSum(List<Integer> A, int t) {
   
-    HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
-    for(int a : A){
-      map.put(t-a, a);
-    }
-    for(int a : A){
-      if(map.getKey(a)){
-        return true;
-      }
+    return false;
     }
   
   }
