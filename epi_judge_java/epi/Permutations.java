@@ -5,6 +5,7 @@ import epi.test_framework.EpiTestComparator;
 import epi.test_framework.LexicographicalListComparator;
 import epi.test_framework.GenericTest;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.BiPredicate;
@@ -14,7 +15,29 @@ public class Permutations {
 
   public static List<List<Integer>> permutations(List<Integer> A) {
     // Implement this placeholder.
-    return null;
+    List<List<Integer>> results = new ArrayList<>();
+    recursivePerm(0,A, results);
+    return results;
+  }
+
+
+
+  public static List<List<Integer>> recursivePerm(int i,List<Integer> A,List<List<Integer>> results) {
+
+      //if index has reached end of the array, return result set.
+      if(i == A.size() - 1) {
+          results.add(A);
+          System.out.println(A);
+          return results;
+      }
+
+        //keep integer in 0-th index fixed, permute remaining string
+      for(int j = i; j<A.size(); ++j) {
+          Collections.swap(A, i, j);
+          recursivePerm(i + 1, A, results);
+          Collections.swap(A,i,j);
+      }
+      return results;
   }
 
   @EpiTestComparator
